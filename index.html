@@ -3,184 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Pagina niet gevonden</title>
+    <title>Discord Pagina</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Algemene body styling */
         body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(270deg, #1e1e1e, #292929);
-            animation: backgroundMove 10s infinite alternate;
-            color: white;
-            text-align: center;
             flex-direction: column;
-        }
-        @keyframes backgroundMove {
-            0% { background-position: left; }
-            100% { background-position: right; }
-        }
-        .logo {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            height: 60px;
-            cursor: pointer;
-        }
-        .icon {
-            font-size: 3em;
-            animation: spin 2s linear infinite;
-        }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        h1 {
-            font-size: 2.5em;
-            opacity: 0;
-            animation: fadeIn 2s forwards, glitch 1s infinite;
-            position: relative;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes glitch {
-            0% { text-shadow: 2px 2px #ff0000, -2px -2px #00ff00; }
-            25% { text-shadow: -2px 2px #00ff00, 2px -2px #ff0000; }
-            50% { text-shadow: 2px -2px #ff0000, -2px 2px #00ff00; }
-            75% { text-shadow: -2px -2px #00ff00, 2px 2px #ff0000; }
-            100% { text-shadow: 2px 2px #ff0000, -2px -2px #00ff00; }
-        }
-        .underline {
-            width: 50px;
-            height: 4px;
-            background-color: #f39c12;
-            margin: 10px auto;
-            animation: expand 1.5s infinite alternate ease-in-out;
-        }
-        @keyframes expand {
-            from { width: 50px; }
-            to { width: 120px; }
-        }
-        p {
-            font-size: 1.2em;
-            opacity: 0;
-            animation: fadeIn 2s forwards 0.5s;
-        }
-        .bounce {
-            display: inline-block;
-            animation: bounce 1.5s infinite ease-in-out;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .home-link {
-            margin-top: 20px;
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #f39c12;
+            height: 100vh;
+            background: linear-gradient(to right, #6a11cb, #2575fc); /* Mooie gradient achtergrond */
             color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .home-link:hover {
-            background-color: #e67e22;
+            overflow-x: hidden;
+            transition: background 0.3s ease;
         }
 
-        /* Loginformulier */
-        .login-container {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 280px;
-            margin-top: 20px;
-        }
-        label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-        input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #555;
-            border-radius: 4px;
-            background-color: #444;
-            color: white;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #f39c12;
-            border: none;
-            color: white;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #e67e22;
-        }
-        .error {
-            color: red;
+        /* Header styling */
+        header {
             text-align: center;
+            padding: 80px 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        header img {
+            width: 80px;
+            margin-bottom: 20px;
+            animation: rotateLogo 3s infinite linear; /* Logo animatie */
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            animation: slideUp 1.5s ease-out;
+        }
+
+        header p {
+            font-size: 20px;
             margin-top: 10px;
+            animation: fadeIn 3s ease-out;
+        }
+
+        /* Content styling */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 3s ease-out;
+        }
+
+        .discord-button {
+            background-color: #7289da;
+            color: white;
+            padding: 20px 40px;
+            font-size: 22px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            animation: bounceIn 1.5s ease-out;
+        }
+
+        .discord-button:hover {
+            background-color: #5b6eae;
+            transform: scale(1.05);
+        }
+
+        /* Mooie tekstvakken styling */
+        .info-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: fadeInUp 2s ease-in-out forwards;
+        }
+
+        .info-box h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .info-box p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .info-box:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+
+        .info-box:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        /* Discord Widget styling */
+        .discord-widget {
+            margin-top: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            animation: fadeInUp 3s ease-in-out forwards;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+            animation: fadeIn 5s ease-out;
+        }
+
+        footer a {
+            color: #7289da;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .osmo-footer {
+            font-size: 14px;
+            margin-top: 20px;
+            color: #999;
+        }
+
+        .osmo-footer strong {
+            color: #f1f1f1;
+        }
+
+        footer img {
+            width: 50px;
+            margin-top: 10px;
+        }
+
+        /* Animaties */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotateLogo {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
 <body>
-    <a href="https://osmocore.nl"><img src="favicon.png" alt="Logo" class="logo"></a>
-    <div class="icon">⚙️</div>
-    <h1>🚧 404 - Pagina niet gevonden 🚧</h1>
-    <div class="underline"></div>
-    <p>Deze website is nog in aanbouw door <strong>osmocore</strong>. Kom later terug! <span class="bounce">🔧</span></p>
-    
-    <a href="https://osmocore.nl" class="home-link">Ga naar Osmocore website</a>
 
-    <!-- Loginformulier -->
-    <div class="login-container">
-        <h2>Inloggen </h2>
-        <form id="loginForm">
-            <label for="username">Gebruikersnaam</label>
-            <input type="text" id="username" required>
-            <label for="password">Wachtwoord</label>
-            <input type="password" id="password" required>
-            <button type="submit">Inloggen</button>
-            <p class="error" id="error-message"></p>
-        </form>
+    <header>
+        <img src="logo-header.png" alt="Osmo logo">
+        <h1>Welkom op de Discord-server!</h1>
+        <p>Word lid van onze community en blijf up-to-date met de laatste nieuws en updates.</p>
+    </header>
+
+    <!-- Discord Widget -->
+    <div class="discord-widget">
+        <h3>Kom bij onze Discord Server!</h3>
+        <iframe src="https://discord.com/widget?id=1332555567142666253&theme=dark" width="100%" height="300" allowtransparency="true" frameborder="0"></iframe>
     </div>
+        <div class="info-box">
+            <h3>Waarom lid worden?</h3>
+            <p>Als je lid wordt van onze Discord-server, krijg je direct toegang tot een gemeenschap van enthousiaste ontwikkelaars. We delen regelmatig updates, geven advies en helpen elkaar bij het bouwen van geweldige websites!</p>
+        </div>
 
-    <script>
-        const loginForm = document.getElementById('loginForm');
-        const errorMessage = document.getElementById('error-message');
+        <div class="info-box">
+            <h3>Directe Hulp bij Webontwikkeling</h3>
+            <p>Heb je vragen over HTML, CSS, of JavaScript? Ons team van experts staat altijd klaar om je te helpen. Of je nu een beginner bent of een ervaren ontwikkelaar, je krijgt altijd snel antwoord op je vragen.</p>
+        </div>
 
-        // Vervang deze met je eigen inloggegevens
-        const validUsername = 'Osmocore';
-        const validPassword = 'Osmocore';
+        <div class="info-box">
+            <h3>Leer en Groei</h3>
+            <p>Wij zorgen ervoor dat je altijd kunt blijven leren. Van nieuwe technieken tot het delen van codevoorbeelden, je zult jezelf snel ontwikkelen als webontwikkelaar binnen onze community.</p>
+        </div>
 
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+        <!-- Discord Widget -->
+        <div class="discord-widget">
+            <h3>Kom bij onze Discord Server!</h3>
+            <iframe src="https://discord.com/widget?id=1332555567142666253&theme=dark" width="100%" height="300" allowtransparency="true" frameborder="0"></iframe>
+        </div>
 
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+    <footer>
+        <p>&copy; 2025 Sylvain | <a href="https://sylvainhuibers.nl">Website</a></p>
+        <div class="osmo-footer">
+            <p>Dit ontwerp is gemaakt door <strong>OsmoCore</strong>, gebouwd door <strong>Sylvain</strong>.</p>
+        </div>
+        <img src="logo-footer.png" alt="Osmo logo">
+    </footer>
 
-            if (username === validUsername && password === validPassword) {
-                // Redirect naar je testpagina of dashboard
-                window.location.href = 'testpagina.html'; // Pas dit aan naar je testpagina
-            } else {
-                errorMessage.textContent = 'Ongeldige gebruikersnaam of wachtwoord!';
-            }
-        });
-    </script>
 </body>
 </html>
