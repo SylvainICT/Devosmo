@@ -6,7 +6,7 @@
     <title>Discord Pagina</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Algemene body styling */
+        
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -30,7 +30,6 @@
         header img {
             width: 80px;
             margin-bottom: 20px;
-            animation: rotateLogo 3s infinite linear; /* Logo animatie */
         }
 
         header h1 {
@@ -45,7 +44,7 @@
             animation: fadeIn 3s ease-out;
         }
 
-        /* Content styling */
+        
         .content {
             flex: 1;
             display: flex;
@@ -74,7 +73,7 @@
             transform: scale(1.05);
         }
 
-        /* Mooie tekstvakken styling */
+        
         .info-box {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
@@ -105,20 +104,71 @@
             animation-delay: 1s;
         }
 
-        /* Discord Widget styling */
-        .discord-widget {
-            margin-top: 40px;
+       
+        .benefits {
             background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 800px;
+            padding: 50px 20px;
             text-align: center;
+            margin-top: 40px;
+            border-radius: 10px;
+            animation: fadeIn 4s ease-out;
+        }
+
+        .benefits h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .benefits ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .benefits ul li {
+            font-size: 20px;
+            margin-bottom: 15px;
+            opacity: 0;
             animation: fadeInUp 3s ease-in-out forwards;
         }
 
-        /* Footer styling */
+        .benefits ul li:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+
+        .benefits ul li:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .benefits ul li:nth-child(3) {
+            animation-delay: 1.5s;
+        }
+
+        .benefits ul li:nth-child(4) {
+            animation-delay: 2s;
+        }
+
+       
+        .coding-help {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px 20px;
+            margin-top: 40px;
+            text-align: center;
+            border-radius: 10px;
+            animation: fadeIn 4s ease-out;
+        }
+
+        .coding-help h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .coding-help p {
+            font-size: 20px;
+            line-height: 1.6;
+            animation: fadeInUp 3s ease-in-out;
+        }
+
         footer {
             background-color: #333;
             color: white;
@@ -185,15 +235,6 @@
             }
         }
 
-        @keyframes rotateLogo {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
         @keyframes bounceIn {
             0% {
                 transform: scale(0);
@@ -210,16 +251,14 @@
 <body>
 
     <header>
-        <img src="logo-header.png" alt="Osmo logo">
+        <img src="favicon.png" alt="Osmo logo">
         <h1>Welkom op de Discord-server!</h1>
         <p>Word lid van onze community en blijf up-to-date met de laatste nieuws en updates.</p>
     </header>
 
-    <!-- Discord Widget -->
-    <div class="discord-widget">
-        <h3>Kom bij onze Discord Server!</h3>
-        <iframe src="https://discord.com/widget?id=1332555567142666253&theme=dark" width="100%" height="300" allowtransparency="true" frameborder="0"></iframe>
-    </div>
+    <div class="content">
+        <a href="https://discord.gg/PZTSY55XWE" class="discord-button" target="_blank">Join onze Discord</a>
+
         <div class="info-box">
             <h3>Waarom lid worden?</h3>
             <p>Als je lid wordt van onze Discord-server, krijg je direct toegang tot een gemeenschap van enthousiaste ontwikkelaars. We delen regelmatig updates, geven advies en helpen elkaar bij het bouwen van geweldige websites!</p>
@@ -234,19 +273,21 @@
             <h3>Leer en Groei</h3>
             <p>Wij zorgen ervoor dat je altijd kunt blijven leren. Van nieuwe technieken tot het delen van codevoorbeelden, je zult jezelf snel ontwikkelen als webontwikkelaar binnen onze community.</p>
         </div>
+    </div>
 
-        <!-- Discord Widget -->
-        <div class="discord-widget">
-            <h3>Kom bij onze Discord Server!</h3>
-            <iframe src="https://discord.com/widget?id=1332555567142666253&theme=dark" width="100%" height="300" allowtransparency="true" frameborder="0"></iframe>
-        </div>
+
+    <div class="coding-help">
+        <h2>Website Coderen & Developer Uitleg</h2>
+        <p>Ben jij bezig met het ontwikkelen van een website en heb je technische vragen? In onze Discord-server kun je rekenen op hulp van ervaren developers. Of je nu vragen hebt over HTML, CSS, JavaScript, of gewoon wilt leren hoe je een professionele website bouwt, wij staan klaar om je te helpen!</p>
+        <p>Vraag het gerust aan onze experts en krijg snel antwoord. We helpen je met elke stap van je ontwikkelingsproces, zodat jij de beste websites kunt maken!</p>
+    </div>
 
     <footer>
-        <p>&copy; 2025 Sylvain | <a href="https://sylvainhuibers.nl">Website</a></p>
+        <p>&copy; 2025 Sylvain | <a href="https://osmocore.nl">Website</a></p>
         <div class="osmo-footer">
-            <p>Dit ontwerp is gemaakt door <strong>OsmoCore</strong>, gebouwd door <strong>Sylvain</strong>.</p>
+            <p>Dit ontwerp is gemaakt door <strong>OsmoCore</strong>, gebouwd door <strong>Devosmo</strong>.</p>
         </div>
-        <img src="logo-footer.png" alt="Osmo logo">
+        <img src="favicon.png" alt="Osmo logo">
     </footer>
 
 </body>
